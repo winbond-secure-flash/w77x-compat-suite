@@ -1,0 +1,83 @@
+THIRD-PARTY SOFTWARE NOTICES
+
+This project includes the code from:
+
+--------------------------------------
+Libaries: platform\STM32H7_setup\stm32h7_bsp\Drivers\BSP
+          platform\STM32H7_setup\stm32h7_bsp\Drivers\STM32H7RSxx_HAL_Driver
+
+Source:  STM32CubeH7RS MCU Firmware Package
+License: BSD-3-Clause
+
+Copyright (c) 2023-2021,2018,2017,2015  STMicroelectronics.
+
+https://opensource.org/licenses/BSD-3-Clause
+
+--------------------------------------
+Libaries: platform\STM32H7_setup\stm32h7_bsp\Drivers\CMSIS
+
+Source:  STM32CubeH7RS MCU Firmware Package
+License: Apache-2.0
+
+Copyright (c) 2022-2017  STMicroelectronics.
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------
+Libaries: platform\STM32H7_setup\stm32h7_bsp\Boot\
+
+Source:  STM32CubeH7RS MCU Firmware Package
+License: Software license agreement
+
+Copyright (c) 2020-2024  STMicroelectronics.
+
+licenses\STM Software license agreement.txt
+
+--------------------------------------
+
+Libaries: platform\NXP1050_setup\nxp_10xx_bsp\bsp_src\*  except	for CMSIS
+
+Source:  NXP SDK_2_16_0_EVKB-IMXRT1050
+License: BSD-3-Clause
+
+Copyright (c) 2013-2016, Freescale Semiconductor, Inc.
+Copyright (c) 2016-2020, NXP
+
+
+https://opensource.org/licenses/BSD-3-Clause
+
+--------------------------------------
+
+Libaries: platform\NXP1050_setup\nxp_10xx_bsp\bsp_src\CMSIS
+
+Source:  NXP SDK_2_16_0_EVKB-IMXRT1050
+License: Apache-2.0
+
+Copyright (C) 2010-2017 ARM Limited or its affiliates. All rights reserved
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------
+
+Libaries: platform\NXP685_setup\nxp_rt685_bsp\*  except	for CMSIS
+
+Source:  NXP sdk_2.x_evk-mimxrt685
+License: BSD-3-Clause
+
+Copyright (c) Copyright 2015 - 2016 Freescale Semiconductor, Inc.
+Copyright (c) Copyright 2016 - 2025 NXP
+
+https://opensource.org/licenses/BSD-3-Clause
+
+--------------------------------------
+
+Libaries: platform\NXP685_setup\nxp_rt685_bsp\   arm related files
+
+Source:  NXP sdk_2.x_evk-mimxrt685
+License: Apache-2.0
+
+Copyright (c) 2017-2023 Arm Limited. All rights reserved.
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------

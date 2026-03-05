@@ -1,0 +1,35 @@
+//-width(0,0)                     // Use single line output
+//-"format=%f %l %t %n: %m"
+//-hfa_3
++fdi                            // Use the directory of the including file
+
+-emacro(*,SET_REG_FIELD)        // Skip all warning for major register manipulation macros
+-emacro(*,READ_REG_FIELD)   
+-emacro(*,REG_WRITE)    
+-emacro(*,REG_READ) 
+-emacro(*,BUILD_FIELD_VAL)
+-emacro(*,SET_VAR_FIELD)
+-emacro(*,SET_VAR_BIT)
+-emacro(*,CLEAR_VAR_BIT)
+-emacro(*,INT_TO_BOOLEAN)
+-emacro(*,BOOLEAN_TO_INT)
+-emacro(*,DEFS_STATUS_RET_CHECK_GOTO)
+-emacro(*,DEFS_STATUS_COND_CHECK)
+-emacro(*,SEC_VALUE_TO_ENUM)
+-emacro(*,SEC_ENUM_TO_VALUE)
+-emacro(*,BUSY_WAIT_TIMEOUT)
+-emacro(*,BUSY_WAIT)
+-emacro(413,OFFSET_OF)
+-emacro(545,OFFSET_OF)
+
+-e123                           // Allow weird macro manipulations
+-e686                           // Skip warnings on too much warnings
+-e845                           // Allow constant meaningless operations (addition with constant 0, shift with constant 0, etc)
+-e869                           //              -""- 
+-e835                           //              -""-
+-e866                           // Allow 'unusual use of sizeof'
+-e506                           // Allow constant meaningless compare (like 1==3, etc. This happens due to multi-platform support by comparing DEFINEs and removed by compiler)
+
++rw(_to_semi)                   
+-d__asm=_to_semi                // Skip in-line assembly
+-d__asm__=_to_semi
