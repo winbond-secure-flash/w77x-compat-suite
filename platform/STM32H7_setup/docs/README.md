@@ -1,6 +1,18 @@
-## STM32H7S78DK MB1736D platform instructions
-
+<h2><u>STM32H7S78DK MB1736D platform instructions</u></h1>
+<br>
+<br>
+<h4 { style="margin-bottom: 0px;" }><u>HW integration</u></h4>
+<br>
 <img src="images/STM32H7_top_side.jpg" width="700"><br>
+<br>
+<ol margin-top="0px"; margin-bottom="0px"; margin-left="0"; type="a"><b><u>Prepare the HW as follows:</u></b>
+<li> Remove the on board U23 device (see the Yellow circule)</li>
+<li> Replace with Winbond device (for example W77T64NWS)</li>
+<li>Connect a USB-C cable to the board's STLINK port on one side (see the green arrow above)</li>  
+<br>
+<div><img src="images/STM32H7-bootSwitch.png" width="400"></div><br>
+<li>Make sure theat the mechanical switch <strong>BOOT0 (SW1)</strong> is set to <strong>0</strong> position as in the above image</li>
+</ol>
 
 
 <br>
@@ -83,8 +95,6 @@ Right-click on the project -> Build Configurations -> Set Active -> Debug as the
 
 <li>Run the test:  
 <ol>
-  <li>Make sure theat the mechanical switch <strong>BOOT0 (SW1)</strong> is set to <strong>0</strong> position</li>
-  <li>Connect a USB-C cable to the board's STLINK port on one side</li>
   <li>Click the Bug in Debug mode with breakpoint capability, or, click the right-pointing triangle to Run
   <div><img src="images/run_the_test.png" "width="80"></div></li><br>
   <li>The test result enables either the green (test pass) or RED (test fail) LEDs which are located at the bottom side of the board.</li><br>

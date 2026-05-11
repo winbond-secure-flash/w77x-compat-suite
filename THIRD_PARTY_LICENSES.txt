@@ -34,7 +34,26 @@ Copyright (c) 2020-2024  STMicroelectronics.
 licenses\STM Software license agreement.txt
 
 --------------------------------------
+Libaries: platform\STM32N6_setup\stm32n6_bsp\  (excluding CMSIS sub-folders)
 
+Source:  STM32CubeN6 MCU Firmware Package
+License: Software license agreement
+
+Copyright (c) 2020-2024  STMicroelectronics.
+
+https://opensource.org/licenses/BSD-3-Clause
+
+--------------------------------------
+Libaries: platform\STM32N6_setup\stm32n6_bsp\Drivers\CMSIS\
+
+Source:  STM32CubeN6 MCU Firmware Package
+License: Software license agreement
+
+Copyright (c) 2020-2024  STMicroelectronics.
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+--------------------------------------
 Libaries: platform\NXP1050_setup\nxp_10xx_bsp\bsp_src\*  except	for CMSIS
 
 Source:  NXP SDK_2_16_0_EVKB-IMXRT1050
