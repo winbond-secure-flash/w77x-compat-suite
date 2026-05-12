@@ -5,7 +5,7 @@ The platforms covered by this test suite are:
 * NXP i\.MX RT1050
 * NXP i\.MX RT685
 * STM STM32H7S78-DK
-* STM STM32N65780-DK
+* STM STM32N6570-DK
 
 HW and FW integration steps for each platform are in the links below:
 
