@@ -61,8 +61,8 @@
 
 
   3. <u>Clone the Winbond's Compatibility tests repository</u>  
-    The project was created using the STM32CubeMX GUI (with STM32Cube FWH7RS V1.2.0, toolchain/IDE=stmCubeIDE, enable XSPI2 & UART4 & <strong>generate the code</strong> to create the project).<br>
-    <u>SW changes that were made include:</u>
+    The project was created using the STM32CubeMX GUI (with STM32Cube FWH7RS V1.2.0, toolchain/IDE=stmCubeIDE, enable XSPI2 & UART4 & <strong>generate the code</strong> to create the project).<br><br>
+    <u>SW changes that were made include:</u><br>
     a. stm32h7_bsp\Boot\Inc\stm32h7rsxx_hal_conf.h      // HAL configuration file<br>
     b. stm32h7_bsp\Boot\Inc\stm32h7rsxx_it.h            // Interrupt handlers header file<br>
     c. stm32h7_bsp\Boot\Src\stm32h7rsxx_it.c            // Interrupt handlers<br>
