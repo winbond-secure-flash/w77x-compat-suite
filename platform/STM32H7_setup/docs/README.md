@@ -1,24 +1,23 @@
-<h2><u>STM32H7S78DK MB1736D platform instructions</u></h1>
-<br>
-<br>
-<h4 { style="margin-bottom: 0px;" }><u>HW integration</u></h4>
-<br>
-<img src="images/STM32H7_top_side.jpg" width="600"><br>
-<br>
-<ol margin-top="0px"; margin-bottom="0px"; margin-left="0"; type="a"><b><u>Prepare the HW as follows:</u></b>
+<h2><u>STM32H7S78DK MB1736D platform instructions</u></h2><br>
+  
+<h4 { style="margin-bottom: 0px;" }><u>HW integration</u></h4><br>
+  <img src="images/STM32H7_top_side.jpg" width="600"><br>
+  <br>
+<ol margin-top="0px"; margin-bottom="0px"; margin-left="0"><b><u>Prepare the HW as follows:</u></b>
   <li> Remove the on board U23 device (see the Yellow circule)</li>
   <li> Replace with Winbond device (for example W77T64NWS)</li>
-  <li>Connect a USB-C cable to the board's STLINK port on one side (see the green arrow above)</li>  
+  <li> Connect a USB-C cable to the board's STLINK port on one side (see the green arrow above)</li>  
   <br>
-  <div><img src="images/STM32H7-bootSwitch.png" width="300"></div><br>
-  <li>Make sure theat the mechanical switch <strong>BOOT0 (SW1)</strong> is set to <strong>0</strong> position as in the above image</li>
+  <li>Make sure theat the mechanical switch <strong>BOOT0 (SW1)</strong> is set to <strong>0</strong> position as in the image below<br>
+    <img src="images/STM32H7_bootSwitch.jpg" width="300"><br>
+  </li>  
 </ol>
 
 <br>
-<u><h4 { style="margin-bottom: 0px;" }>SW integration</u></h4>
+<h4 { style="margin-bottom: 0px;" }><u>SW integration</u></h4>
 <ol>
   <li>Installation steps:
-  <ol  style="list-style-type: lower-alpha;"; margin-top="0px"; margin-bottom="0px"; margin-left="0";>
+  <ol type="A"; margin-top="0px"; margin-bottom="0px"; margin-left="0">
     <li>Install the STM32CubeIDE - version 2.0.0 Build: 26820_20251114_1348</li>
     <Li>Install the STMCubeIDE terminal console or any other terminal tool</li>
     <li>Clone the Winbond's Compatibility tests repository</li>
@@ -28,14 +27,14 @@
   </ol></li><br>
 
   <Li>Installation steps details:
-  <ol style="list-style-type: lower-alpha;"; margin-top="0px"; margin-bottom="0px"; margin-left="0">
+  <ol type="A"; margin-top="0px"; margin-bottom="0px"; margin-left="0">
     <li><u><b>Install the STM32CubeIDE - version 2.0.0 Build: 26820_20251114_1348</b></u><br>
     The test was run on the version & build as mentioned above, but it may run on other versions</li><br>
     <li><u><b>Install the STMCubeIDE terminal console or any other terminal tool</b></u><br>
     This step is optional, you can skip this step if you only want a pass/fail indication by the LEDs or when using external terminal tool.<br>
     The test was run on the STM32H7S78DK with the following serial connection settings "115200bps 8N1".<br><br>
     <u>Following are the steps for installing the IDE's terminal console</u>
-     <ol  style="list-style-type: decimal;">
+     <ol  type="a">
       <li> Click on Menu->Help<br>
       <div><img src="images/install_the_console_terminal1.png" width="700"></div></li><br>
       Click "Install new Software.."<br>
@@ -68,7 +67,7 @@
     <li><u><b>Clone the Winbond's Compatibility tests repository</b></u><br>
     The project was created using the STM32CubeMX GUI (with STM32Cube FWH7RS V1.2.0, toolchain/IDE=stmCubeIDE, enable XSPI2 & UART4 & <strong>generate the code</strong> to create the project).<br>
     SW changes that were made include</strong>:<br>
-    <ol  style="list-style-type: decimal"; >
+    <ol  type="A" >
       <li>stm32h7_bsp\Boot\Inc\stm32h7rsxx_hal_conf.h      // HAL configuration file</li>
       <li>stm32h7_bsp\Boot\Inc\stm32h7rsxx_it.h            // Interrupt handlers header file</li>
       <li>stm32h7_bsp\Boot\Src\stm32h7rsxx_it.c            // Interrupt handlers</li>
@@ -78,7 +77,7 @@
     </ol></li>
     <br>
     <li><u><b>Load the project</u></b>
-    <ol style="list-style-type: decimal;">
+    <ol type="A">
       <li>In the IDE click on [File]->Import Projects from File System or Archive
       <div><img src="images/file-importProject.png" width="400"></div></li><br>
       <li>click on the <strong>Directory</strong>
@@ -96,7 +95,7 @@
     </li>
     <br>
     <li><u><b>Run the test</b></u><br>
-    <ol  style="list-style-type: decimal;" >
+    <ol type="A">
       <li>connect the board's STLink port to the host computer</li>
       <li>Opitonal for the internal console terminal - to receive the log messages switch the view <strong>command shell console</strong> to the desired connection name.
       <li>Click the Bug in Debug mode with breakpoint capability, or, click the right-pointing triangle to Run
