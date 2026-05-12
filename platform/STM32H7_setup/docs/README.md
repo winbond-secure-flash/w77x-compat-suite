@@ -51,7 +51,7 @@
        <div><img src="images/install_the_console_terminal8.png" width="400"></div><br>
     j. Select <strong>Command Shell Console</strong> and fill the parameters as shown in the image
        <div><img src="images/install_the_console_terminal9.png" width="400"></div><br>
-    k. select <strong>New</strong> verify the serial port parameters as in the image
+    k. Select <strong>New</strong> verify the serial port parameters as in the image
        <div><img src="images/install_the_console_terminal10.png" width="700"></div><br>
     l. Connect the STLink port of the board via a USB-C cable to the host computer and the comm port wlil be automatically filled.<br><br>
     m. Name the connection and click Finish and then click OK.
@@ -71,7 +71,7 @@
     f. The SystemClock_Config() function is used to configure the system clock (SYSCLK) to run at 600 MHz<br>
   <br><br>
 
-  4. <u>Load the project</u>
+  4. <u>Load the project</u><br>
     a. In the IDE click on [File]->Import Projects from File System or Archive<br>
       <img src="images/file-importProject.png" width="400"><br><br>
     b. Click on the <strong>Directory</strong><br>
