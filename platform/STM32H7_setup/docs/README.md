@@ -5,10 +5,10 @@
   <img src="images/STM32H7_top_side.jpg" width="600"><br>
   <br>
 <b><u>Prepare the HW as follows:</u></b><br>
-  1. Remove the on board U23 device (see the Yellow circule)<br>
+  1. Remove the on board U23 device (see the Yellow circle)<br>
   2. Replace with Winbond device (for example W77T64NWS)<br>
   3. Connect a USB-C cable to the board's STLINK port on one side (see the green arrow above)<br>
-  4. Make sure theat the mechanical switch <strong>BOOT0 (SW1)</strong> is set to <strong>0</strong> position as in the image below<br>
+  4. Make sure that the mechanical switch <strong>BOOT0 (SW1)</strong> is set to <strong>0</strong> position as in the image below<br>
     <img src="images/STM32H7_bootSwitch.jpg" width="300"><br>
 
 
@@ -25,10 +25,10 @@
 
 <u><b>Installation steps details:</b></u>
 
-1. <u>Install the STM32CubeIDE - version 2.0.0 Build: 26820_20251114_1348</u>
+1. <u>Install the STM32CubeIDE - version 2.0.0 Build: 26820_20251114_1348</u><br>
     The test was run on the version & build as mentioned above, but it may run on other versions<br>
-2. <u>Install the STMCubeIDE terminal console or any other terminal tool</u>
-   This step is optional, you can skip this step if you only want a pass/fail indication by the LEDs or when using external terminal tool.
+2. <u>Install the STMCubeIDE terminal console or any other terminal tool</u><br>
+   This step is optional, you can skip this step if you only want a pass/fail indication by the LEDs or when using external terminal tool.<br>
    The test was run on the STM32H7S78DK with the following serial connection settings "115200bps 8N1".<br>
    <u>Following are the steps for installing the IDE's terminal console</u><br>
 
@@ -76,9 +76,9 @@
       <img src="images/file-importProject.png" width="400"><br><br>
     b. Click on the <strong>Directory</strong><br>
       <img src="images/file-importProject-selectFolder.png" width="600"><br><br>
-    c. At the opened GUI, Browse to the root folder of the suite and click <strong>Select Folder</strong>
+    c. At the opened GUI, Browse to the root folder of the suite and click <strong>Select Folder</strong><br>
       <img src="images/select_the_root_of_the_suite.png" width="600"><br><br>
-    d. Un-select all but the STM32H7_setup checkboxes, then, click on the <strong>Finish</strong>
+    d. Un-select all but the STM32H7_setup checkboxes, then, click on the <strong>Finish</strong><br>
       <img src="images/file-importProject-finish.png" width="600"><br><br>
 
   5. <u>Compile</u><br>

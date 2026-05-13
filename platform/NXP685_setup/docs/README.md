@@ -5,14 +5,14 @@ Replace the on board flash device (marked with a yellow circle) with a Winbond W
 <h4 { style="margin-bottom: 0px;" }><u>SW integration</u></h4>
 <ol>
 	<li>SW Installation (*):
-	<ol type="a">
+	<ol  style="list-style-type: lower-alpha;"; >
 		<li>NXP IDE - MCUXpresso IDE v25.6 [Build 136][2025-06-27]</li>
 		<li>SDK_2.x_EVKB-IMXRT685 version 25.09.00 (epluginsite815 2025-09-22) Manifest Version 3.15.0</li>
 		<li>Clone  Winbond's Compatibility tests repository
 	</ol></li>
 	<br>
 	<li>Load the project:
-	<ol type="a">
+	<ol  style="list-style-type: lower-alpha;"; >
 		<li>Import the project:
 		<div><img src="images/file-importProject.png" width="400"></div></li><br>
 		<li>Select the folder which contains the .cproject

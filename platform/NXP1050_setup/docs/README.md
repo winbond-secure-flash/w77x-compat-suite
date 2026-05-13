@@ -11,7 +11,7 @@
 <ol>
 	<li>Replace the original QSPI Flash ISSI IS25WP064AJBLE (U33) with a Winbond W77Q/T  Secure Flash Device flash device in an SOIC-8 package.</li>
 	<li>0ohm streering resistors replacement (located at the bottom side):  
-	<ol type="a">
+	<ol  style="list-style-type: lower-alpha;"; >
 		<li>remove resistors R356, R361-R366, R49</li>
 		<li>solder resistors R153-R158</li>
 	</ol></li>
@@ -22,13 +22,13 @@
 <h4 { style="margin-bottom: 0px;" }><u>SW integration</u></h4>
 <ol>
 	<li>SW Installation (*):
-	<ol type="a">
+	<ol  style="list-style-type: lower-alpha;"; >
 		<li>NXP IDE - MCUXpresso IDE v25.6 [Build 136][2025-06-27]</li>
 		<li>SDK_2.x_EVKB-IMXRT1050 version 2.16.000 (847 2024-07-12) Manifest Version 3.14.0</li>
 		<li>Clone Winbond's Compatibility tests repository</li>
 		</ol></li><br>
 	<li>Load the project:
-	<ol type="a">
+	<ol  style="list-style-type: lower-alpha;"; >
 		<li>Import the project
 		<div><img src="images/file-importProject.png" width="400"></div></li><br>
 		<li>Select the folder which contains the .cproject

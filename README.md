@@ -1,5 +1,6 @@
 ### W77Q/T Compatibility Tests  
-W77Q/T Secure Flash devices are fully compatible with the standard Flash instruction set used in the W25Q family of devices. This test suite demonstrates this compatibility across multiple platforms.
+W77Q/T Secure Flash devices are fully compatible with the standard Flash instruction set used in the W25Q family of devices.
+This test suite demonstrates this compatibility across multiple platforms.
 
 The platforms covered by this test suite are:
 * NXP i\.MX RT1050
@@ -48,7 +49,7 @@ HW and FW integration steps for each platform are in the links below:
  │    │    ├── 📁logs                        ; This folder contains the STM32H7 test logs
  │    │    ├── 📁stm32h7_board_extension
  │    │    ├── 📁stm32h7_bsp
- │    │    └── 📁source                      ; This folder contains the STM32H7 main() & supporting functions│
+ │    │    └── 📁source                      ; This folder contains the STM32H7 main() & supporting functions
  │    │
  │    └── 📁STM32N6_setup
  │         ├── 📁_settings                   ; IDE configuration files
@@ -56,7 +57,7 @@ HW and FW integration steps for each platform are in the links below:
  │         ├── 📁logs                        ; This folder contains the STM32N6 test logs
  │         ├── 📁stm32n6_board_extension
  │         ├── 📁stm32n6_bsp
- │         └── 📁source                      ; This folder contains the STM32N6 main() & supporting functions│
+ │         └── 📁source                      ; This folder contains the STM32N6 main() & supporting functions
  │
  ├── LICENSE.txt
  │
