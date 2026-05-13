@@ -1,5 +1,5 @@
 ### W77Q/T Compatibility Tests  
-W77Q/T Secure Flash devices are fully compatible with the standard Flash instruction set used in the W25Q family of devices.
+W77Q/T Secure Flash devices are fully compatible with the standard Flash instruction set used in the W25Q family of devices.<br>
 This test suite demonstrates this compatibility across multiple platforms.
 
 The platforms covered by this test suite are:
