@@ -28,8 +28,8 @@
 The setup runs Linux OS on the micro-SD card. Follow the next steps to prepare such a card:<br>
 
 1. Acquire a 16GB micro-SD card<br><br>
-2. Download the OS (Our test runs on the Yocto BSP linux rootfs, but there may be other OS flavours which run on this setup as well)
-      The test was run with the following SW versions <br><img src="images/Yocto_BSP_page_for_Sparrow_Hawk-Software_Version_List.png" width="180"><br>
+2. Download the OS (Our test runs on the Yocto BSP linux rootfs, but there may be other OS flavours which run on this setup as well).  
+The test was run with the following SW versions <br><img src="images/Yocto_BSP_page_for_Sparrow_Hawk-Software_Version_List.png" width="180"><br>
       a. Open a Browser at the address: https://rcar-community.github.io/Sparrow-Hawk/BSP/yocto_bsp.html<br>
       b. Download the Yocto BSP linux rootfs image file: core-image-minimal-sparrow-hawk.rootfs.wic.gz<br>
       c. Download the balenaEtcher programmer: https://etcher.balena.io/#download-etcher <br>
