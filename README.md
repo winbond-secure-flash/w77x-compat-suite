@@ -7,6 +7,7 @@ The platforms covered by this test suite are:
 * NXP i\.MX RT685
 * STM STM32H7S78-DK
 * STM STM32N6570-DK
+* Renesas V4H Sparrow Hawk
 
 HW and FW integration steps for each platform are in the links below:
 
@@ -14,6 +15,7 @@ HW and FW integration steps for each platform are in the links below:
 [For further information on the NXP685   setup, click here](platform/NXP685_setup/docs/README.md)  
 [For further information on the STM32H7  setup, click here](platform/STM32H7_setup/docs/README.md)  
 [For further information on the STM32N6  setup, click here](platform/STM32N6_setup/docs/README.md)  
+[For further information on the Renesas V4H Sparrow Hawk setup, click here](platform/Renesas_V4H_Sparrow_Hawk_setup/docs/README.md)  
   
 ### Test Suite Directory Structure
 ```
@@ -51,13 +53,18 @@ HW and FW integration steps for each platform are in the links below:
  │    │    ├── 📁stm32h7_bsp
  │    │    └── 📁source                      ; This folder contains the STM32H7 main() & supporting functions
  │    │
- │    └── 📁STM32N6_setup
- │         ├── 📁_settings                   ; IDE configuration files
- │         ├── 📁docs                        ; This folder contains the STM32N6 specific documentation, including README.md & images
- │         ├── 📁logs                        ; This folder contains the STM32N6 test logs
- │         ├── 📁stm32n6_board_extension
- │         ├── 📁stm32n6_bsp
- │         └── 📁source                      ; This folder contains the STM32N6 main() & supporting functions
+ │    ├── 📁STM32N6_setup
+ │    │    ├── 📁_settings                   ; IDE configuration files
+ │    │    ├── 📁docs                        ; This folder contains the STM32N6 specific documentation, including README.md & images
+ │    │    ├── 📁logs                        ; This folder contains the STM32N6 test logs
+ │    │    ├── 📁stm32n6_board_extension
+ │    │    ├── 📁stm32n6_bsp
+ │    │    └── 📁source                      ; This folder contains the STM32N6 main() & supporting functions
+ │    │
+ │    └── 📁Renesas_V4H_Sparrow_Hawk_setup
+ │         ├── 📁docs                        ; This folder contains the Renesas V4H Sparrow Hawk specific documentation, including README.md & images
+ │         ├── 📁logs                        ; This folder contains the Renesas V4H Sparrow Hawk test logs
+ │         └── 📁source                      ; This folder contains the Renesas V4H Sparrow Hawk test files
  │
  ├── LICENSE.txt
  │

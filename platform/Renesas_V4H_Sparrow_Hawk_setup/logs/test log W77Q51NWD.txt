@@ -1,0 +1,30 @@
+root@sparrow-hawk:~# ./compatibility_test
+-sh: /home/root/compatibility_test: No such file or directory
+root@sparrow-hawk:~# ~/compatibility_test.sh
+Starting compatibility test for Winbond flash on Renesas V4H Sparrow Hawk board
+Checking board model...
+OK
+Checking mtd1 "user" partition...
+OK
+Checking first 4KB of /dev/mtd1 are erased (0xFF)...
+OK: First 4KB fully erased (all 0xFF).
+Creating pattern.bin with 256B data (0x00, 0x01, 0x02, .. 0xFF)
+Writing 256B pattern.bin to /dev/mtd1...
+SUCCESS
+Reading 256B from /dev/mtd1 address 0x00...
+SUCCESS
+Comparing read and write files...
+OK: read&write files are identical
+Reverting flash mtd1 to its previous state - Erasing sector 0...
+Erasing 4 Kibyte @ 0 -- 100 % complete
+
+   PPPPPPP        A          SSSSSSS      SSSSSSS
+   P      P      A A        SS     SS    SS     SS
+   P      P     A   A         SS           SS
+   PPPPPP      AAAAAAA          SS           SS
+   P          A       A           SS           SS
+   P         A         A    SS     SS    SS     SS
+   P        A           A    SSSSSSS      SSSSSSS
+
+Test done
+root@sparrow-hawk:~#
