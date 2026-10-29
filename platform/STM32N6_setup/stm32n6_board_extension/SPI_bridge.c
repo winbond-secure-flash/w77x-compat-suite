@@ -46,7 +46,7 @@ static XSPI_HandleTypeDef *hxspi = &hxspi2;
 
 static int g_dqs_mode = HAL_XSPI_DQS_DISABLE;
 
-static uint32_t g_spi_freq = FREQ_100_MHZ;  // STM32 initialized XSPI flash frequency
+static uint32_t g_spi_freq_mhz = FREQ_100_MHZ;  // STM32 initialized XSPI flash frequency [MHz]
 
 
 
@@ -65,26 +65,77 @@ bool PLAT_SPI_GetDqsMode(void)
 }
 
 // XSPI2 Set Frequency [MHz]
-// Parameters:
-//   frequencyMhz Range: 10-400
+// Supported frequencies: 133, 166, 200 MHz (returns -1 on any other value).
+//
+// The XSPI2 SCK is derived from the XSPI2 kernel clock (IC4 <- PLL4) divided by
+// the XSPI prescaler. The prescaler is left at its initialized value of 1 (i.e. a
+// divide-by-2), so the kernel clock is configured to 2 x the requested SCK:
+//
+//   requested SCK | PLL4 (M, N, P1, P2) | VCO      | PLL4 out = IC4 kernel | SCK = kernel/2
+//   --------------+---------------------+----------+-----------------------+----------------
+//      200 MHz    |  4, 75, 3, 1        | 1200 MHz |        400 MHz         |   200.00 MHz
+//      166 MHz    |  8, 125, 3, 1       | 1000 MHz |        333.33 MHz      |   166.67 MHz
+//      133 MHz    |  4, 50, 3, 1        |  800 MHz |        266.67 MHz      |   133.33 MHz
+//
+// (PLL4 source = HSI = 64 MHz)
 int XSPI_SetFrequency(XSPI_HandleTypeDef *hxspi, uint32_t frequencyMhz)
 {
-#if 0 // TODO: implement for STM32N6
+    RCC_OscInitTypeDef       oscInit  = {0};
+    RCC_PeriphCLKInitTypeDef pclkInit = {0};
+    uint32_t pllM;
+    uint32_t pllN;
 
-#endif
+    /* Map requested SCK frequency to PLL4 multiplication/division factors */
+    switch (frequencyMhz)
+    {
+        case 133: pllM = 4; pllN = 50;  break;  /* VCO 800 MHz  -> 266.67 MHz kernel */
+        case 166: pllM = 8; pllN = 125; break;  /* VCO 1000 MHz -> 333.33 MHz kernel */
+        case 200: pllM = 4; pllN = 75;  break;  /* VCO 1200 MHz -> 400 MHz kernel    */
+        default:  return -1;                     /* unsupported frequency             */
+    }
+
+    /* Reconfigure PLL4 which feeds IC4 -> XSPI2 kernel clock.
+       PLL4 only sources the XSPI2 kernel clock, so it is safe to reconfigure here. */
+    oscInit.OscillatorType = RCC_OSCILLATORTYPE_NONE;
+    oscInit.PLL1.PLLState  = RCC_PLL_NONE;
+    oscInit.PLL2.PLLState  = RCC_PLL_NONE;
+    oscInit.PLL3.PLLState  = RCC_PLL_NONE;
+    oscInit.PLL4.PLLState      = RCC_PLL_ON;
+    oscInit.PLL4.PLLSource     = RCC_PLLSOURCE_HSI;
+    oscInit.PLL4.PLLM          = pllM;
+    oscInit.PLL4.PLLN          = pllN;
+    oscInit.PLL4.PLLFractional = 0;
+    oscInit.PLL4.PLLP1         = 3;
+    oscInit.PLL4.PLLP2         = 1;
+    if (HAL_RCC_OscConfig(&oscInit) != HAL_OK)
+    {
+        return -1;
+    }
+
+    pclkInit.PeriphClockSelection = RCC_PERIPHCLK_XSPI2;
+    pclkInit.Xspi2ClockSelection  = RCC_XSPI2CLKSOURCE_IC4;
+    pclkInit.ICSelection[RCC_IC4].ClockSelection = RCC_ICCLKSOURCE_PLL4;
+    pclkInit.ICSelection[RCC_IC4].ClockDivider   = 2;
+    if (HAL_RCCEx_PeriphCLKConfig(&pclkInit) != HAL_OK)
+    {
+        return -1;
+    }
+
+    g_spi_freq_mhz = frequencyMhz;
     return 0;
 }
 
+
 int PLAT_SPI_GetFreqInHz(uint32_t* freq)
 {
-    *freq = g_spi_freq * 1000000;
+    *freq = g_spi_freq_mhz * 1000000;
     return 0;
 }
 
 int PLAT_SPI_SetFreqInHz(uint32_t freq)
 {
-    g_spi_freq = (freq/1000000);
-    return XSPI_SetFrequency(&hxspi2, g_spi_freq);
+    g_spi_freq_mhz = (freq/1000000);
+    return XSPI_SetFrequency(&hxspi2, g_spi_freq_mhz);
 }
 
 int PLAT_GetCapabilities(PLAT_SPI_HW_CAPABILITIES_T* hwCapabilities)
@@ -102,9 +153,9 @@ int PLAT_GetCapabilities(PLAT_SPI_HW_CAPABILITIES_T* hwCapabilities)
     hwCapabilities->hw_test_mode = false;
     hwCapabilities->hw_freq_set = false;
     hwCapabilities->hw_spi_sdr_min_freq_in_hz = 1000000;
-    hwCapabilities->hw_spi_sdr_max_freq_in_hz = FREQ_200_MHZ;
+    hwCapabilities->hw_spi_sdr_max_freq_in_hz = FREQ_200_MHZ * 1000000;
     hwCapabilities->hw_spi_dtr_min_freq_in_hz = 2000000;
-    hwCapabilities->hw_spi_dtr_max_freq_in_hz = FREQ_200_MHZ;
+    hwCapabilities->hw_spi_dtr_max_freq_in_hz = FREQ_200_MHZ * 1000000;
     hwCapabilities->hw_spi_max_read_buffer_size = 256;
     hwCapabilities->busModes.plat_spi_1_1_1 = true;
     hwCapabilities->busModes.plat_spi_1_1_2 = true;

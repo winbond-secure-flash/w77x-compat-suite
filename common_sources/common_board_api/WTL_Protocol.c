@@ -1,3 +1,9 @@
+/************************************************************************************************************
+* @remark     Winbond Electronics Corporation
+* @copyright  Copyright (c) 2019 by Winbond Electronics Corporation . All rights reserved
+*
+************************************************************************************************************/
+
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>

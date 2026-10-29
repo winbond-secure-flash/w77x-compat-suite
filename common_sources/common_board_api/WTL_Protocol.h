@@ -1,3 +1,9 @@
+/************************************************************************************************************
+* @remark     Winbond Electronics Corporation
+* @copyright  Copyright (c) 2019 by Winbond Electronics Corporation . All rights reserved
+*
+************************************************************************************************************/
+
 #ifndef WTL_PROTOCOL_H_
 #define WTL_PROTOCOL_H_
 
